@@ -7,9 +7,17 @@ public class PlayerAbilityController : MonoBehaviour
     SpriteRenderer pSprite;
     int currentMode = 0;
 
-    public List<PlayerAbilityAction> abilityList;
+    public List<PlayerModeSkeleton> abilityList;
 
     PlayerMovement pMovement;
+
+
+    
+    public KeyCode Ability1Button;
+    public KeyCode Ability2Button;
+    public KeyCode Ability3Button;
+    public KeyCode modeSwitchLeft = KeyCode.Q;
+    public KeyCode modeSwitchRight = KeyCode.E;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,24 +29,24 @@ public class PlayerAbilityController : MonoBehaviour
         abilityList.Add(GetComponent<Gunner>());
         abilityList.Add(GetComponent<Bruiser>());
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         modeChange();
         modeVisualUpdate();
-        abilityList[currentMode].Ability1();
+        AbilityButtonCheck();
     }
 
     void modeChange()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(modeSwitchLeft))
         {
             currentMode--;
             if (currentMode == -1) currentMode = 2;
             switchReset();
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(modeSwitchRight))
         {
             currentMode++;
             if (currentMode == 3) currentMode = 0;
@@ -56,5 +64,13 @@ public class PlayerAbilityController : MonoBehaviour
     void switchReset()
     {
         pMovement.currentMaxRunSpeed = pMovement.defaultRunSpeed;
+    }
+
+    void AbilityButtonCheck()
+    {
+        if (Input.GetKeyDown(Ability1Button))
+            abilityList[currentMode].Ability1OnPress();
+        else if (Input.GetKeyUp(Ability1Button))
+            abilityList[currentMode].Ability1OnRelease();
     }
 }

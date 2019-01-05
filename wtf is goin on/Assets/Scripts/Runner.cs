@@ -2,27 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Runner : PlayerAbilityAction
+public class Runner : PlayerModeSkeleton
 {
     public float sprintSpeed = 90;
 
-    public override void Ability1()
+    public override void Ability1OnPress()
     {
-        
-        /*
-     if(!abilityAnyActive || ability1Active)
-     {*/
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
+        p.currentMaxRunSpeed = sprintSpeed;
+    }
 
-            p.currentMaxRunSpeed = sprintSpeed;
-            //ability1Active = true;
-        }
-        else
-        {
-            p.currentMaxRunSpeed = p.defaultRunSpeed;
-            //ability1Active = false;
-        }/*
-        }*/
+    public override void Ability1OnRelease()
+    {
+        p.currentMaxRunSpeed = p.defaultRunSpeed;
     }
 }

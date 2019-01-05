@@ -753,6 +753,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityList: []
+  Ability1Button: 304
+  Ability2Button: 0
+  Ability3Button: 0
+  modeSwitchLeft: 113
+  modeSwitchRight: 101
 --- !u!114 &467306488
 MonoBehaviour:
   m_ObjectHideFlags: 0
