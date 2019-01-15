@@ -7,17 +7,25 @@ public class PlayerAbilityController : MonoBehaviour
     SpriteRenderer pSprite;
     int currentMode = 0;
 
+    /*  Mode 1: Runner
+     *  Mode 2: Gunner
+     *  Mode 3: Bruiser
+     */
+
     public List<PlayerModeSkeleton> abilityList;
 
     PlayerMovement pMovement;
 
-
-    
     public KeyCode Ability1Button;
     public KeyCode Ability2Button;
     public KeyCode Ability3Button;
     public KeyCode modeSwitchLeft = KeyCode.Q;
     public KeyCode modeSwitchRight = KeyCode.E;
+
+    bool ability1Active;
+    bool ability2Active;
+    bool ability3Active;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -40,6 +48,7 @@ public class PlayerAbilityController : MonoBehaviour
 
     void modeChange()
     {
+        if(!IsAbilityActive())
         if (Input.GetKeyDown(modeSwitchLeft))
         {
             currentMode--;
@@ -68,9 +77,38 @@ public class PlayerAbilityController : MonoBehaviour
 
     void AbilityButtonCheck()
     {
-        if (Input.GetKeyDown(Ability1Button))
-            abilityList[currentMode].Ability1OnPress();
-        else if (Input.GetKeyUp(Ability1Button))
-            abilityList[currentMode].Ability1OnRelease();
+        if (!IsAbilityActive() || ability1Active)
+        {
+            if (Input.GetKeyDown(Ability1Button))
+            {
+                abilityList[currentMode].Ability1OnPress();
+                ability1Active = true;
+            }
+            else if (Input.GetKeyUp(Ability1Button))
+            {
+                abilityList[currentMode].Ability1OnRelease();
+                ability1Active = false;
+            }
+        }
+
+        if (!IsAbilityActive() || ability2Active)
+        {
+            if (Input.GetKeyDown(Ability2Button))
+            {
+                abilityList[currentMode].Ability2OnPress();
+                ability2Active = true;
+            }
+            else if (Input.GetKeyUp(Ability2Button))
+            {
+                abilityList[currentMode].Ability2OnRelease();
+                ability2Active = false;
+            }
+        }
+    }
+
+    bool IsAbilityActive()
+    {
+        if (ability1Active || ability2Active || ability3Active) return true;
+        else return false;
     }
 }

@@ -142,6 +142,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+    public Transform CameraPoint;
 
 	private void Flip()
 	{
@@ -150,5 +151,6 @@ public class CharacterController2D : MonoBehaviour
 
         // Multiply the player's x local scale by -1.
         transform.Rotate(0f, 180f, 0f);
-	}
+        CameraPoint.Rotate(0f, 180f, 0f);
+    }
 }

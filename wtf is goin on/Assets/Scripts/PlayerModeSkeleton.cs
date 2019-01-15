@@ -10,22 +10,11 @@ public class PlayerModeSkeleton : MonoBehaviour
 {
     public PlayerMovement p;
 
-    bool ability1Active;
-    bool ability2Active;
-    bool ability3Active;
-
-    bool abilityAnyActive;
+    
 
     private void Awake()
     {
         p = GetComponent<PlayerMovement>();
-    }
-    
-
-    void ActiveAbilityUpdate()
-    {
-        if (ability1Active || ability2Active || ability3Active) abilityAnyActive = true;
-        else abilityAnyActive = false;
     }
 
     public virtual void Ability1OnPress()
