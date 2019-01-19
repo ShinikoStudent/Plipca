@@ -71,6 +71,9 @@
     <Compile Include="Assets\Scripts\PlayerModeSkeleton.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Runner.cs" />
+    <Reference Include="Cinemachine">
+      <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -80,17 +83,14 @@
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/Unity/Projects/Mep/Plipca/wtf is goin on/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

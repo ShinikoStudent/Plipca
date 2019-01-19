@@ -25,9 +25,7 @@ public class PlayerHitBox : MonoBehaviour
 
     IEnumerator decay()
     {
-        Debug.Log("kek");
         yield return new WaitForSeconds(despawnTime);
-        Debug.Log("meep");
         Destroy(gameObject);
     }
 }
